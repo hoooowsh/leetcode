@@ -1,4 +1,4 @@
-package easy;
+package medium;
 
 public class AddTwoNumbers_2 {
 	public class ListNode {
