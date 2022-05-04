@@ -5,6 +5,14 @@ import java.util.ArrayList;
 import easy.SameTree_100.TreeNode;
 
 public class RecoverBST_99 {
+	/***
+	 * 
+	 * @author Sheng The first two version are both recursive inorder traversal
+	 *         approaches, the time complexity is O(N) and space complexity is up to
+	 *         O(N). The third approach is using morris inorder traversal with time
+	 *         O(N) and space O(1)
+	 *
+	 */
 
 	public static class TreeNode {
 		int val;
@@ -97,5 +105,71 @@ public class RecoverBST_99 {
 		}
 		prev = root;
 		inorderTrav2(root.right);
+	}
+
+	// Third version, morris inoder traversal
+	// 1st case: left child is null, print(meaning making comparison) current node
+	// and go right.
+	// 2nd case: when there is a left subtree and the right-most child of this left
+	// subtree is pointing to null. Set the right-most child to point to the current
+	// node and move the the left of the current node.
+	// 3rd case: when there is a left subtree and the right-most child of this
+	// left-subtree is already pointing to the current node. Meaning the left
+	// subtree is already visited, print the value of the current node and move to
+	// the right of the current node.
+	public static void recoverTree3(TreeNode root) {
+		TreeNode x = null;
+		TreeNode y = null;
+		TreeNode pred = null;
+		TreeNode predecessor = null;
+		while (root != null) {
+			// case 2 and 3
+			if (root.left != null) {
+				predecessor = root.left;
+				// going to the right most for current node, and set the right most node to root
+				while (predecessor.right != null && predecessor.right != root) {
+					predecessor = predecessor.right;
+					// case 2: connect the right most node to root, making a connection, then go to
+					// next level
+					if (predecessor.right == null) {
+						predecessor.right = root;
+						root = root.left;
+					}
+					// case 3: breaking a connection for subtree that already scanned through
+					else {
+						// check for the swapped nodes
+						if (pred != null && root.val < pred.val) {
+							if (x == null) {
+								x = pred;
+							}
+							y = root;
+						}
+						pred = root;
+
+						predecessor.right = null;
+						root = root.right;
+					}
+				}
+			}
+			// case 1: left child is null
+			else {
+				// check if need swap or not
+				if (pred != null && root.val < pred.val) {
+					if (x == null) {
+						x = pred;
+					}
+					y = root;
+				}
+				pred = root;
+				root = root.right;
+			}
+		}
+		swap3(x, y);
+	}
+
+	public static void swap3(TreeNode a, TreeNode b) {
+		int tmp = a.val;
+		a.val = b.val;
+		b.val = tmp;
 	}
 }
