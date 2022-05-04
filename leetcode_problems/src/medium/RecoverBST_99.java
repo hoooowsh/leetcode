@@ -129,27 +129,27 @@ public class RecoverBST_99 {
 				// going to the right most for current node, and set the right most node to root
 				while (predecessor.right != null && predecessor.right != root) {
 					predecessor = predecessor.right;
-					// case 2: connect the right most node to root, making a connection, then go to
-					// next level
-					if (predecessor.right == null) {
-						predecessor.right = root;
-						root = root.left;
-					}
-					// case 3: breaking a connection for subtree that already scanned through
-					else {
-						// check for the swapped nodes
-						if (pred != null && root.val < pred.val) {
-							if (x == null) {
-								x = pred;
-							}
-							y = root;
-						}
-						pred = root;
-
-						predecessor.right = null;
-						root = root.right;
-					}
 				}
+				// case 2: connect the right most node to root, making a connection, then go to
+				// next level
+				if (predecessor.right == null) {
+					predecessor.right = root;
+					root = root.left;
+				}
+				// case 3: breaking a connection for subtree that already scanned through
+				else {
+					// check for the swapped nodes
+					if (pred != null && root.val < pred.val) {
+						if (x == null) {
+							x = pred;
+						}
+						y = root;
+					}
+					pred = root;
+					predecessor.right = null;
+					root = root.right;
+				}
+
 			}
 			// case 1: left child is null
 			else {
