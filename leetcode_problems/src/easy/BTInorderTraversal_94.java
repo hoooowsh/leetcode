@@ -38,6 +38,7 @@ public class BTInorderTraversal_94 {
 			return;
 		}
 		helper(root.left, list);
+		list.add(root.val);
 		helper(root.right, list);
 	}
 }
