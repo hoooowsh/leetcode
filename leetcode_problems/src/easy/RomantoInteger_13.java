@@ -1,4 +1,4 @@
-package medium;
+package easy;
 
 public class RomantoInteger_13 {
 	public static void main(String[] args) {
