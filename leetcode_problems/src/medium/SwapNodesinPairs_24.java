@@ -52,6 +52,7 @@ public class SwapNodesinPairs_24 {
 			// if this is the last node 
 			else {
 				prev.next = cur;
+				break;
 			}
 		}
 		if(cur == null) {
