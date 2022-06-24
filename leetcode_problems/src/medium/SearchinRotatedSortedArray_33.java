@@ -12,6 +12,7 @@ public class SearchinRotatedSortedArray_33 {
 		System.out.println(test);
 	}
 
+	// binary search
 	public static int search(int[] nums, int target) {
 		if (nums.length < 1 || nums == null) {
 			return -1;
