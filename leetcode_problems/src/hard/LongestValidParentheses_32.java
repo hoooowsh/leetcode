@@ -10,6 +10,9 @@ public class LongestValidParentheses_32 {
 		System.out.println(len);
 	}
 
+	// using DP. The array is to store all valid index, a stack is used to decide if
+	// the parentheses make sense, after looping through all elements, go over the
+	// array again the get the max
 	public static int longestValidParentheses(String s) {
 		Stack<Integer> stack = new Stack<Integer>();
 		boolean[] arr = new boolean[s.length()];
