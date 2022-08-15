@@ -21,14 +21,18 @@ public class CombinationSum2_40 {
 		return result;
 	}
 
+	// same as 39, but checking duplicate
 	public static void helper(int[] candidates, int target, List<List<Integer>> result, int index, List<Integer> cur,
 			int curval) {
 		for (int i = index; i < candidates.length; i++) {
+			//////////////////////////////////////////////////
+			// This part is important
 			if (i > 0) {
 				if (i > index && candidates[i] == candidates[i - 1]) {
 					continue;
 				}
 			}
+			/////////////////////////////////////////////////
 			int total = curval + candidates[i];
 			if (total > target) {
 				return;
@@ -40,7 +44,7 @@ public class CombinationSum2_40 {
 			} else {
 				List<Integer> copy = new ArrayList<>(cur);
 				copy.add(candidates[i]);
-				helper(candidates, target, result, i, copy, total);
+				helper(candidates, target, result, i + 1, copy, total);
 			}
 		}
 	}
