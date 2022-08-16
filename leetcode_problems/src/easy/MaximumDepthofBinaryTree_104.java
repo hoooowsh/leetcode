@@ -2,7 +2,6 @@ package easy;
 
 import java.util.Stack;
 
-import easy.SymmetricTree_101.TreeNode;
 
 public class MaximumDepthofBinaryTree_104 {
 
