@@ -5,6 +5,9 @@ public class ReverseLinkedList_206 {
 	}
 
 	public ListNode reverseList(ListNode head) {
+		if(head == null) {
+			return head;
+		}
 		ListNode currnode = head.next;
 		ListNode prevnode = head;
 		head.next = null;
