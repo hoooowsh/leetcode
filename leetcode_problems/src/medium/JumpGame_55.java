@@ -7,6 +7,7 @@ public class JumpGame_55 {
 		System.out.println(boo);
 	}
 
+	// find 0 and check if there is a way to jump over this 0
 	public static boolean canJump(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return false;
