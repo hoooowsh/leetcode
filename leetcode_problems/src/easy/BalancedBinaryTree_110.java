@@ -49,6 +49,20 @@ public class BalancedBinaryTree_110 {
 		return Math.max(lH, rH) + 1;
 	}
 
+	public static boolean isBalanced2(TreeNode root) {
+		if (root == null) {
+			return true;
+		}
+		return Math.abs(height2(root.left) - height2(root.right)) < 2;
+	}
+
+	public static int height2(TreeNode node) {
+		if (node == null) {
+			return 0;
+		}
+		return 0;
+	}
+
 	public static class TreeNode {
 		int val;
 		TreeNode left;
