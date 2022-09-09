@@ -3,6 +3,7 @@ package medium;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.PriorityQueue;
 
 public class MeetingRooms2_253 {
 	public static void main(String args[]) {
@@ -48,4 +49,7 @@ public class MeetingRooms2_253 {
 		}
 		return counter;
 	}
+
+	// Second approach using PQ
+
 }
