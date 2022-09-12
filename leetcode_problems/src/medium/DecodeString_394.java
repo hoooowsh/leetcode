@@ -12,7 +12,8 @@ public class DecodeString_394 {
 	}
 
 	// can have a stack of array, array record num of repeat, "[" index, then
-	// replace the value inside []. It is slow but working
+	// replace the value inside []. It is slow but working.
+	// slow because not using stringbuilder
 	public static String decodeString(String s) {
 		Stack<int[]> stack = new Stack<>();
 		for (int i = 0; i < s.length(); i++) {
@@ -55,7 +56,4 @@ public class DecodeString_394 {
 		return result;
 	}
 
-	public static String decodeString2(String s) {
-		return "";
-	}
 }
