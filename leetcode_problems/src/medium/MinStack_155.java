@@ -1,6 +1,5 @@
 package medium;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class MinStack_155 {
