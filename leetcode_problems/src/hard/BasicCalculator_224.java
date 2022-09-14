@@ -17,6 +17,8 @@ public class BasicCalculator_224 {
 //		System.out.println(Integer.valueOf(str));
 	}
 
+	// not fast because not using string builder and parse a lot, the algorithm
+	// itself has no problem
 	public static int calculate(String s) {
 		Stack<String> stack = new Stack<>();
 		for (int i = 0; i < s.length(); i++) {
