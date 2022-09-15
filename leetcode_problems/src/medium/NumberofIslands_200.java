@@ -11,8 +11,8 @@ public class NumberofIslands_200 {
 	}
 
 	public static void helper(char[][] grid, int row, int col) {
-		while()
-		for(int j = col)
-		}
+//		while()
+//		for(int j = col)
+//		}
 	}
 }
