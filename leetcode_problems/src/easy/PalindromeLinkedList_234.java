@@ -46,6 +46,8 @@ public class PalindromeLinkedList_234 {
 		return recursivelyCheck(head);
 	}
 
+	// if O(1) extra space is required, just count the size of the linked lists
+
 	public class ListNode {
 		int val;
 		ListNode next;
