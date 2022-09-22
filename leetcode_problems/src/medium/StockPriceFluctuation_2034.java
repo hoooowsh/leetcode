@@ -19,6 +19,7 @@ public class StockPriceFluctuation_2034 {
 
 	}
 
+	// maybe all use hashmap will make it faster
 	public static class StockPrice {
 		HashMap<Integer, Integer> map;
 		TreeMap<Integer, Integer> price;
@@ -36,7 +37,6 @@ public class StockPriceFluctuation_2034 {
 				// remove old price
 				if (this.price.get(map.get(timestamp)) == 1) {
 					this.price.remove(map.get(timestamp));
-					this.price.put(price, 1);
 				} else {
 					this.price.put(map.get(timestamp), this.price.get(map.get(timestamp)) - 1);
 				}
