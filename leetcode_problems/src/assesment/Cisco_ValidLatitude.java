@@ -1,18 +1,24 @@
 package assesment;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.regex.*;
 
 public class Cisco_ValidLatitude {
 
 	public static void main(String args[]) {
-		String test1 = "(+89.01, +179.11)";
-		String test2 = "(+90, +180)";
-		String test3 = "(90, 180)";
-		String test4 = "(90., 180)";
-		String test5 = "(90.0, 180.1)";
-		String test6 = "(85S, 95W)";
+//		String test1 = "(+89.01, +179.11)";
+//		String test2 = "(+90, +180)";
+//		String test3 = "(90, 180)";
+//		String test4 = "(90., 180)";
+//		String test5 = "(90.0, 180.1)";
+//		String test6 = "(85S, 95W)";
+//
+//		System.out.println(ValidLatitude(test6));
 
-		System.out.println(ValidLatitude(test6));
+		int[] arr = { 3, 1, 2, 1 };
+		int k = 4;
+//		System.out.println(test(arr, k));
 	}
 
 	public static boolean ValidLatitude(String str) {
@@ -31,4 +37,5 @@ public class Cisco_ValidLatitude {
 			return false;
 		}
 	}
+
 }

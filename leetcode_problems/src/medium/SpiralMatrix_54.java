@@ -6,7 +6,9 @@ import java.util.List;
 public class SpiralMatrix_54 {
 	public static void main(String[] args) {
 		int[][] test = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
-		int[][] test2 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int[][] test2 = { { 29, 8, 37 }, { 15, 41, 3 }, { 1, 10, 14 } };
+		funcHopSkipJump(test2);
+		
 		List<Integer> tt = spiralOrder(test2);
 		for (int i = 0; i < tt.size(); i++) {
 			System.out.println(tt.get(i));
@@ -77,5 +79,7 @@ public class SpiralMatrix_54 {
 		}
 		return result;
 	}
+
+
 
 }
