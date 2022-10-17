@@ -1,13 +1,13 @@
 package assesment;
 
-public class Cisco_MaxRowCol {
+public class Cisco_MaxRowMinCol {
 	public static void main(String args[]) {
 		int[][] arr = { { 2, 2 }, { 1, 2 }, { 3, 4 } };
-		System.out.println(maxrowcol(arr));
+		System.out.println(maxrowmincol(arr));
 
 	}
 
-	public static int maxrowcol(int[][] arr) {
+	public static int maxrowmincol(int[][] arr) {
 		int result = -1;
 		// going each row
 		for (int i = 0; i < arr.length; i++) {
