@@ -32,7 +32,7 @@ public class WordSearch2_212 {
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[0].length; j++) {
 				if (root.children.containsKey(board[i][j])) {
-
+					backtracking(board, result, root, i, j);
 				}
 			}
 		}
@@ -41,6 +41,28 @@ public class WordSearch2_212 {
 	}
 
 	public static void backtracking(char[][] board, List<String> result, TrieNode cur, int row, int col) {
+		// check if the index is valid
+		if (row < 0 || col < 0 || row >= board.length || col >= board[0].length) {
+			return;
+		}
+		// check if the element in current index is valid
+		if (board[row][col] == '*') {
+			return;
+		}
+		// remember the current char for backtracking
+		char temp = board[row][col];
+		board[row][col] = '*';
+		// if current is a valid word, add it to result and set it to null to avoid
+		// duplicate
+		if (cur.word != null) {
+			result.add(cur.word);
+			cur.word = null;
+		}
+		if (true) {
+
+		}
+		// reset elelment for backtracking
+		board[row][col] = temp;
 
 	}
 
