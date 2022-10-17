@@ -9,7 +9,7 @@ public class Cisco_HopSkipJump {
 		int currow2 = height;
 		int curcol1 = 0;
 		int curcol2 = width;
-		int temp = 0;
+		int temp = 1;
 		int resultx = 0;
 		int resulty = 0;
 
