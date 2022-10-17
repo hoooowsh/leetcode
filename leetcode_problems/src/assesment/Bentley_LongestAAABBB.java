@@ -1,11 +1,13 @@
 package assesment;
 
-public class Bentley_longestAAABBB {
+public class Bentley_LongestAAABBB {
 	public static void main(String args[]) {
 		String test = "BAAABAB";
 		System.out.println(solution(test));
 	}
 
+	// BAAABAB delete minimum char to make the string start with all As and end with
+	// all Bs
 	public static int solution(String S) {
 		if (S == null || S == "") {
 			return 0;
