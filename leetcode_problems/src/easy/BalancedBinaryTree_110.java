@@ -25,42 +25,16 @@ public class BalancedBinaryTree_110 {
 		if (root == null) {
 			return true;
 		}
-		return height(root) != -1;
+		return Math.abs(helper(1, root.left) - helper(1, root.right)) <= 1;
 	}
 
-	// first get left and right height using recursion, then see if there is a
-	// unbalanced subtree exists, return false immediately if there is one, of not,
-	// check if the height of left and right is no more different than 1
-	public static int height(TreeNode node) {
+	public static int helper(int deep, TreeNode node) {
 		if (node == null) {
-			return 0;
+			return deep;
 		}
-		int lH = height(node.left);
-		if (lH == -1) {
-			return -1;
-		}
-		int rH = height(node.right);
-		if (rH == -1) {
-			return -1;
-		}
-		if (lH - rH < -1 || lH - rH > 1) {
-			return -1;
-		}
-		return Math.max(lH, rH) + 1;
-	}
-
-	public static boolean isBalanced2(TreeNode root) {
-		if (root == null) {
-			return true;
-		}
-		return Math.abs(height2(root.left) - height2(root.right)) < 2;
-	}
-
-	public static int height2(TreeNode node) {
-		if (node == null) {
-			return 0;
-		}
-		return 0;
+		helper(deep + 1, node.left);
+		helper(deep + 1, node.right);
+		return deep;
 	}
 
 	public static class TreeNode {
