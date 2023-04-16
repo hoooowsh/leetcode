@@ -1,5 +1,6 @@
 package easy;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -136,12 +137,6 @@ public class MissingRanges_163 {
 			l1.add(upper);
 			result.add(l1);
 		}
-		return result;
-	}
-
-	// this solution is easier but cost more time
-	public static List<String> findMissingRanges2(int[] nums, int lower, int upper) {
-		List<String> result = new LinkedList<String>();
 		return result;
 	}
 }
