@@ -2,48 +2,10 @@ package medium;
 
 public class DecodeWays_91 {
 	public static void main(String[] args) {
-		System.out.println(numDecodings2("110"));
+		System.out.println(numDecodings("110"));
 	}
 
 	public static int numDecodings(String s) {
-		if (s.charAt(0) == '0') {
-			return 0;
-		}
-		int result = helper(s, 0, false);
-		return result;
-	}
-
-	public static int helper(String s, int index, Boolean isTwoDigit) {
-		if (index > s.length() - 1) {
-			return 0;
-		}
-		int cur = s.charAt(index) - '0';
-		// if it is the first digit
-		if (!isTwoDigit) {
-			// not good if 0
-			if (cur == 0) {
-				return 0;
-			} else {
-				if (cur > 2) {
-					return 1 + helper(s, index + 1, false);
-				} else {
-					return 1 + helper(s, index + 1, true) + helper(s, index + 1, false);
-				}
-			}
-		}
-		// if it is the second digit
-		else {
-			if (cur > 6) {
-				return 0;
-			} else if (cur == 0) {
-				return helper(s, index + 1, false);
-			} else {
-				return 1 + helper(s, index + 1, false);
-			}
-		}
-	}
-
-	public static int numDecodings2(String s) {
 		int[] arr = new int[s.length() + 1];
 		if (s.charAt(0) - '0' == 0) {
 			return 0;
