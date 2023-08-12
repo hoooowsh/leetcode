@@ -50,4 +50,9 @@ public class ReverseWordsinaString2_186 {
 			result[pos + i] = s[l + i];
 		}
 	}
+
+	// another way to do it is not creating a new array, use the existing array and
+	// reverse the words order, for both head and tail, use pointers to remember the
+	// index. Use temp string to store the value if the length is improper at that
+	// moment
 }
