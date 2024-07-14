@@ -5,7 +5,6 @@ import java.util.Stack;
 public class MinimumRemoveToMakeValidParentheses_1249 {
     public static void main(String[] args) {
         String test = "a)b(c)d";
-        String result = minRemoveToMakeValid(test);
     }
 
     public static String minRemoveToMakeValid(String s) {
