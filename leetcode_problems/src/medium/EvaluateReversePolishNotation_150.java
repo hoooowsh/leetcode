@@ -6,7 +6,7 @@ public class EvaluateReversePolishNotation_150 {
 
     }
 
-    // Seperate number and operators
+    // Seperate number and operators, put numbers in a stack and directly calculate once see an operator
     public int evalRPN(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
 
