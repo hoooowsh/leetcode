@@ -2,7 +2,7 @@
 * @owner1 @owner2
 
 # Code owners for the `src` directory
-leetcode_problems @teamA
+/leetcode_problems @teamA
 
 # Code owners for Ruby files
 *.gitignore @testowner1
