@@ -1,0 +1,11 @@
+# Code owners for the entire repository
+* @owner1 @owner2
+
+# Code owners for the `src` directory
+leetcode_problems @teamA
+
+# Code owners for Ruby files
+*.gitignore @testowner1
+
+# Code owners for a specific file
+/README.md @readme_owner
