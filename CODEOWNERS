@@ -1,1 +1,2 @@
-*.gitignore @testowner950403
+^[Team Sheng]
+*.gitignore @testowner950403 @@myg-codeowners/sheng
