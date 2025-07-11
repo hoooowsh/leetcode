@@ -8,4 +8,4 @@
 *.gitignore @testowner1
 
 # Code owners for a specific file
-/README.md @readme_owner
+README.md @readme_owner
