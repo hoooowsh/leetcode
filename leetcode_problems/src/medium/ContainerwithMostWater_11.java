@@ -5,7 +5,7 @@ public class ContainerwithMostWater_11 {
 		int[] test = { 2, 3, 4, 5, 18, 17, 6 };
 		int[] test3 = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 		int[] test2 = { 1, 1 };
-		System.out.println(maxArea(test3));
+		System.out.println(maxArea2(test3));
 	}
 
 	// first version, using two pointer. Moving pointer from the smaller side, find
@@ -44,6 +44,50 @@ public class ContainerwithMostWater_11 {
 						break;
 					}
 					hi = j;
+				}
+			}
+		}
+		return max;
+	}
+
+	public static int maxArea2(int[] height) {
+		int cur_left = 0;
+		int cur_right = height.length - 1;
+		int max = Math.min(height[cur_left], height[cur_right]) * (cur_right - cur_left);
+		while (cur_left <= cur_right) {
+			int cur_max = Math.min(height[cur_left], height[cur_right]) * (cur_right - cur_left);
+			if (cur_max >= max) {
+				max = cur_max;
+			}
+			System.out.println("test");
+			if (height[cur_left] > height[cur_right]) {
+				Boolean updated = false;
+				for (int right = cur_right - 1; right >= cur_left; right--) {
+					if (height[right] > height[cur_right]) {
+						cur_right = right;
+						updated = true;
+						break;
+					}
+				}
+				if (!updated) {
+					break;
+				}
+			} else {
+				Boolean updated = false;
+
+				int left = cur_left + 1;
+				while (left < cur_right) {
+					if (height[left] > height[cur_left]) {
+						cur_left = left;
+						updated = true;
+
+						break;
+					}
+					left++;
+					System.out.println(left);
+				}
+				if (!updated) {
+					break;
 				}
 			}
 		}
