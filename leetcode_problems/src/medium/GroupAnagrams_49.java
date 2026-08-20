@@ -29,4 +29,25 @@ public class GroupAnagrams_49 {
 		}
 		return result;
 	}
+
+	public static List<List<String>> groupAnagrams2(String[] strs) {
+		List<List<String>> result = new ArrayList<>();
+		HashMap<String, Integer> hash = new HashMap<String, Integer>();
+		for (int i = 0; i < strs.length; i++) {
+			char[] chars = strs[i].toCharArray();
+			Arrays.sort(chars);
+			String sorted = new String(chars);
+			if (hash.containsKey(sorted)) {
+				int index = hash.get(sorted);
+				result.get(index).add(strs[i]);
+			} else {
+				List<String> tempList = new ArrayList<String>();
+				tempList.add(strs[i]);
+				result.add(tempList);
+				hash.put(sorted, result.size() - 1);
+			}
+		}
+		return result;
+	}
+
 }
