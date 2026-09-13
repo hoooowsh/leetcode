@@ -5,6 +5,22 @@ public class InvertBinaryTree_226 {
 
 	}
 
+	public static TreeNode invertTree2(TreeNode root) {
+		invert(root);
+		return root;
+	}
+
+	public static void invert(TreeNode node) {
+		if (node == null) {
+			return;
+		}
+		TreeNode temp = node.left;
+		node.left = node.right;
+		node.right = temp;
+		invert(node.left);
+		invert(node.right);
+	}
+
 	public static TreeNode invertTree(TreeNode root) {
 		TreeNode head = root;
 		helper(root);
