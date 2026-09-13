@@ -1,6 +1,7 @@
 package medium;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class ImplementTrie_208 {
 	public static void main(String args[]) {
@@ -11,6 +12,66 @@ public class ImplementTrie_208 {
 		trie.startsWith("app");
 		trie.insert("app");
 		trie.search("app");
+	}
+
+	public class Trie2 {
+		Node root;
+
+		public Trie2() {
+			root = new Node(false);
+		}
+
+		public void insert(String word) {
+			Node cur = root;
+			for (int i = 0; i < word.length(); i++) {
+				int curCharIndex = word.charAt(i) - 'a';
+				if (cur.arr[curCharIndex] != null) {
+					cur = cur.arr[curCharIndex];
+				} else {
+					Node temp;
+					temp = new Node(false);
+					cur.arr[curCharIndex] = temp;
+					cur = temp;
+				}
+			}
+			cur.isTail = true;
+		}
+
+		public boolean search(String word) {
+			Node cur = root;
+			for (int i = 0; i < word.length(); i++) {
+				int curCharIndex = word.charAt(i) - 'a';
+				if (cur.arr[curCharIndex] != null) {
+					cur = cur.arr[curCharIndex];
+				} else {
+					return false;
+				}
+			}
+			return cur.isTail;
+		}
+
+		public boolean startsWith(String prefix) {
+			Node cur = root;
+			for (int i = 0; i < prefix.length(); i++) {
+				int curCharIndex = prefix.charAt(i) - 'a';
+				if (cur.arr[curCharIndex] != null) {
+					cur = cur.arr[curCharIndex];
+				} else {
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+
+	public class Node {
+		Node[] arr;
+		boolean isTail;
+
+		public Node(boolean isTail) {
+			arr = new Node[26];
+			this.isTail = isTail;
+		}
 	}
 
 	public static class Trie {

@@ -2,7 +2,6 @@ package easy;
 
 import java.util.Stack;
 
-
 public class MaximumDepthofBinaryTree_104 {
 
 	public static class TreeNode {
@@ -25,16 +24,31 @@ public class MaximumDepthofBinaryTree_104 {
 	}
 
 	public static void main(String[] args) {
-//		TreeNode root = new TreeNode(1);
-//		root.left = new TreeNode(2);
-//		root.right = new TreeNode(3);
-//		root.left.left = new TreeNode(3);
-//		root.left.right = new TreeNode(4);
-//		root.right.left = new TreeNode(4);
-//		root.right.right = new TreeNode(3);
+		// TreeNode root = new TreeNode(1);
+		// root.left = new TreeNode(2);
+		// root.right = new TreeNode(3);
+		// root.left.left = new TreeNode(3);
+		// root.left.right = new TreeNode(4);
+		// root.right.left = new TreeNode(4);
+		// root.right.right = new TreeNode(3);
 	}
 
-	
+	public static int maxDepth3(TreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		return Math.max(getmax(root.left, 1), getmax(root.right, 1));
+	}
+
+	public static int getmax(TreeNode cur, int curDepth) {
+		if (cur == null) {
+			return curDepth;
+		} else {
+			curDepth++;
+			return Math.max(getmax(cur.left, curDepth), getmax(cur.right, curDepth));
+		}
+	}
+
 	// simple recursive version
 	public static int maxDepth(TreeNode root) {
 		if (root == null) {
