@@ -7,6 +7,30 @@ public class MaximumSubarray_53 {
 		System.out.println(tt);
 	}
 
+	public int maxSubArray2(int[] nums) {
+		int result = 0;
+		int left = 0;
+		int cur = 0;
+		int max = Integer.MIN_VALUE;
+		while (cur < nums.length) {
+			
+		}
+		return result;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// count for current max and then record it to another array, kind of DP
 	public static int maxSubArray(int[] nums) {
 		if (nums == null) {
