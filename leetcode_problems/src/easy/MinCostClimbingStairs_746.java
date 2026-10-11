@@ -2,8 +2,35 @@ package easy;
 
 public class MinCostClimbingStairs_746 {
 	public static void main(String[] args) {
-		int[] test = { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 };
-		System.out.println(minCostClimbingStairs(test));
+		int[] test = { 10, 15, 20 };
+		int[] test2 = { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 };
+		System.out.println(minCostClimbingStairs3(test2));
+	}
+
+	public static int minCostClimbingStairs3(int[] cost) {
+		int[][] dp = new int[cost.length + 1][2];
+		for (int i = 0; i < dp.length; i++) {
+			if (i == 0) {
+				dp[0][0] = cost[0];
+				dp[0][1] = Integer.MAX_VALUE;
+				continue;
+			}
+			if (i == 1) {
+				dp[1][0] = cost[0] + cost[1];
+				dp[1][1] = cost[1];
+				continue;
+			}
+			if (i == dp.length - 1) {
+				dp[i][0] = Math.min(dp[i - 1][0], dp[i - 1][1]);
+				dp[i][1] = Math.min(dp[i - 2][0], dp[i - 2][1]);
+				continue;
+			} else {
+				dp[i][0] = Math.min(dp[i - 1][0], dp[i - 1][1]) + cost[i];
+				dp[i][1] = Math.min(dp[i - 2][0], dp[i - 2][1]) + cost[i];
+
+			}
+		}
+		return Math.min(dp[dp.length - 1][0], dp[dp.length - 1][1]);
 	}
 
 	public static int minCostClimbingStairs(int[] cost) {

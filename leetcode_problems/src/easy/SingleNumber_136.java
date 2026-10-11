@@ -9,6 +9,14 @@ public class SingleNumber_136 {
 
 	}
 
+	public int singleNumber3(int[] nums) {
+		int result = 0;
+		for (int i = 0; i < nums.length; i++) {
+			result ^= nums[i];
+		}
+		return result;
+	}
+
 	public static int singleNumber(int[] nums) {
 		HashSet<Integer> set1 = new HashSet<>();
 		HashSet<Integer> set2 = new HashSet<>();

@@ -1,6 +1,8 @@
 package medium;
 
 public class ProductofArrayExceptSelf_238 {
+	// To solve this in O(1) extra space complexity, instead of storing it in extra
+	// arrays, we can store it in the original array
 	public int[] productExceptSelf(int[] nums) {
 		int[] left = new int[nums.length];
 		int[] right = new int[nums.length];
