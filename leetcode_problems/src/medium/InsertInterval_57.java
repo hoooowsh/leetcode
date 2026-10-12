@@ -1,12 +1,36 @@
 package medium;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class InsertInterval_57 {
 	public static void main(String[] args) {
 		int[][] test = { { 1, 2 }, { 3, 5 }, { 6, 7 }, { 8, 10 }, { 12, 16 } };
 		int[] test2 = { 4, 8 };
 		int[][] tt = insert(test, test2);
+	}
+
+	public int[][] insert3(int[][] intervals, int[] newInterval) {
+		List<int[]> res = new ArrayList<>();
+		for (int[] interval : intervals) {
+			// currently after the new interval
+			if (newInterval[1] < interval[0]) {
+				res.add(newInterval);
+				newInterval = interval;
+			}
+			// currently vefore the new interval
+			else if (newInterval[0] > interval[1]) {
+				res.add(interval);
+			}
+			// inside the new interval
+			else {
+				newInterval[0] = Math.min(newInterval[0], interval[0]);
+				newInterval[1] = Math.max(newInterval[1], interval[1]);
+			}
+		}
+		res.add(newInterval);
+		return res.toArray(new int[res.size()][]);
 	}
 
 	public static int[][] insert(int[][] intervals, int[] newInterval) {
